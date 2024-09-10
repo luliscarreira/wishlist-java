@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class WishlistEntityTests {
     @Test
-    void givenOnlyId_whenSettingId_thenIdIsSet() {
+    public void givenOnlyId_whenSettingId_thenIdIsSet() {
         WishlistEntity wishlistEntity = new WishlistEntity();
         wishlistEntity.setId("1");
 
@@ -12,7 +12,7 @@ public class WishlistEntityTests {
     }
 
     @Test
-    void givenOnlyProductId_whenSettingProductId_thenProductIdIsSet() {
+    public void givenOnlyProductId_whenSettingProductId_thenProductIdIsSet() {
         WishlistEntity wishlistEntity = new WishlistEntity();
         wishlistEntity.setProductId("1");
 
@@ -20,7 +20,7 @@ public class WishlistEntityTests {
     }
 
     @Test
-    void givenOnlyUserId_whenSettingWishlistEntity_thenUserIdIsSet() {
+    public void givenOnlyUserId_whenSettingWishlistEntity_thenUserIdIsSet() {
         WishlistEntity wishlistEntity = new WishlistEntity();
         wishlistEntity.setUserId("1");
 

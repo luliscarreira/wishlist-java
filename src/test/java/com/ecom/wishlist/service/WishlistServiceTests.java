@@ -35,7 +35,7 @@ public class WishlistServiceTests {
 
 	// Tests for saveProductToUserWishlist
 	@Test
-	void givenProductWithoutUserId_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
+	public void givenProductWithoutUserId_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setProductId("1");
 
@@ -45,7 +45,7 @@ public class WishlistServiceTests {
 	}
 
 	@Test
-	void givenProductWithoutProductId_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
+	public void givenProductWithoutProductId_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 
@@ -55,7 +55,7 @@ public class WishlistServiceTests {
 	}
 
 	@Test
-	void givenFullWishlist_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
+	public void givenFullWishlist_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 		wishlistEntity.setProductId("1");
@@ -70,7 +70,7 @@ public class WishlistServiceTests {
 	}
 
 	@Test
-	void givenProductAlreadyInWishlist_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
+	public void givenProductAlreadyInWishlist_whenSaveProductToUserWishlist_thenExceptionIsThrown() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 		wishlistEntity.setProductId("1");
@@ -85,7 +85,7 @@ public class WishlistServiceTests {
 	}
 
 	@Test
-	void givenProductNotInWishlist_whenSaveProductToUserWishlist_thenProductSavedOnRepository() {
+	public void givenProductNotInWishlist_whenSaveProductToUserWishlist_thenProductSavedOnRepository() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 		wishlistEntity.setProductId("1");
@@ -98,7 +98,7 @@ public class WishlistServiceTests {
 
 	// Tests for getAllWishlistProductsFromUser
 	@Test
-	void givenUserId_whenGetAllWishlistProductsFromUser_thenRepositoryFindAllCalled() {
+	public void givenUserId_whenGetAllWishlistProductsFromUser_thenRepositoryFindAllCalled() {
 		String userId = "1";
 
 		this.wishlistService.getAllWishlistProductsFromUser(userId);
@@ -108,7 +108,7 @@ public class WishlistServiceTests {
 
 	// Tests for removeProductFromUserWishlist
 	@Test
-	void givenProductNotInWishlist_whenRemoveProductFromUserWishlistIsCalled_thenExceptionIsThrown(){
+	public void givenProductNotInWishlist_whenRemoveProductFromUserWishlistIsCalled_thenExceptionIsThrown(){
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 		wishlistEntity.setProductId("1");
@@ -123,7 +123,7 @@ public class WishlistServiceTests {
 	}
 
 	@Test
-	void givenProductInWishlist_whenRemoveProductFromUserWishlistIsCalled_thenProductIsDeletedFromDB() {
+	public void givenProductInWishlist_whenRemoveProductFromUserWishlistIsCalled_thenProductIsDeletedFromDB() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 		wishlistEntity.setProductId("1");
@@ -139,7 +139,7 @@ public class WishlistServiceTests {
 
 	// Tests for isProductInUserWishlist
 	@Test
-	void givenProductInWishlist_whenIsProductInUserWishlistIsCalled_thenTrueIsReturned() {
+	public void givenProductInWishlist_whenIsProductInUserWishlistIsCalled_thenTrueIsReturned() {
 		WishlistEntity wishlistEntity = new WishlistEntity();
 		wishlistEntity.setUserId("1");
 		wishlistEntity.setProductId("1");

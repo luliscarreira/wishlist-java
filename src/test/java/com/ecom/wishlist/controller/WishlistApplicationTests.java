@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class WishlistApplicationTests {
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 		WishlistApplication.main(new String[] {});
 	}
 }

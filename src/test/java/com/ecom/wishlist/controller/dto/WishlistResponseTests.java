@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class WishlistResponseTests {
 
     @Test
-    void givenUserIdAndProductId_whenInstantiated_thenWishlistResponseIsCreated() {
+    public void givenUserIdAndProductId_whenInstantiated_thenWishlistResponseIsCreated() {
         WishlistResponse response = new WishlistResponse("userId", "productId");
 
         assert response.userId().equals("userId");
@@ -13,7 +13,7 @@ public class WishlistResponseTests {
     }
 
     @Test
-    void givenJustUserId_whenInstantiated_thenWishlistResponseIsCreated() {
+    public void givenJustUserId_whenInstantiated_thenWishlistResponseIsCreated() {
         WishlistResponse response = new WishlistResponse("userId", null);
 
         assert response.userId().equals("userId");
@@ -21,7 +21,7 @@ public class WishlistResponseTests {
     }
 
     @Test
-    void givenJustProductId_whenInstantiated_thenWishlistResponseIsCreated() {
+    public void givenJustProductId_whenInstantiated_thenWishlistResponseIsCreated() {
         WishlistResponse response = new WishlistResponse(null, "productId");
 
         assert response.userId() == null;

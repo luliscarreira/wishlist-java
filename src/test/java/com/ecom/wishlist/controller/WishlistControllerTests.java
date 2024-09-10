@@ -28,7 +28,7 @@ public class WishlistControllerTests {
 
     // Tests for getAllWishlistProductsFromUser
     @Test
-    void givenUserWithOneProductInWishlist_whenGetAllWishlistProductsFromUserIsCalled_thenOneProductIsReturned() {
+    public void givenUserWithOneProductInWishlist_whenGetAllWishlistProductsFromUserIsCalled_thenOneProductIsReturned() {
         String userId = "user1";
         WishlistEntity wishlistEntity = new WishlistEntity();
         wishlistEntity.setUserId(userId);
@@ -44,7 +44,7 @@ public class WishlistControllerTests {
     }
 
     @Test
-    void givenUserWithMultipleProductsInWishlist_whenGetAllWishlistProductsFromUserIsCalled_thenMultipleProductsAreReturned() {
+    public void givenUserWithMultipleProductsInWishlist_whenGetAllWishlistProductsFromUserIsCalled_thenMultipleProductsAreReturned() {
         String userId = "user1";
         WishlistEntity wishlistEntity = new WishlistEntity();
         wishlistEntity.setUserId(userId);
@@ -64,7 +64,7 @@ public class WishlistControllerTests {
     }
 
     @Test
-    void givenUserWithNoProductsInWishlist_whenGetAllWishlistProductsFromUserIsCalled_thenNoProductsAreReturned() {
+    public void givenUserWithNoProductsInWishlist_whenGetAllWishlistProductsFromUserIsCalled_thenNoProductsAreReturned() {
         String userId = "user1";
 
         Mockito.when(wishlistService.getAllWishlistProductsFromUser(userId)).thenReturn(List.of());
@@ -79,7 +79,7 @@ public class WishlistControllerTests {
 
     // Tests for saveProductToUserWishlist
     @Test
-    void givenValidWishlistRequest_whenSaveProductToUserWishlistIsCalled_thenValidWishlistResponseIsReturned() {
+    public void givenValidWishlistRequest_whenSaveProductToUserWishlistIsCalled_thenValidWishlistResponseIsReturned() {
         String userId = "user1";
         String productId = "product1";
         WishlistRequest request = new WishlistRequest(productId);
@@ -101,7 +101,7 @@ public class WishlistControllerTests {
     }
 
     @Test
-    void givenNullUserId_whenSaveProductToUserWishlistIsCalled_thenIllegalArgumentExceptionIsThrown() {
+    public void givenNullUserId_whenSaveProductToUserWishlistIsCalled_thenIllegalArgumentExceptionIsThrown() {
         String productId = "product1";
         WishlistRequest request = new WishlistRequest(productId);
 
@@ -114,7 +114,7 @@ public class WishlistControllerTests {
 
     // Tests for removeProductFromUserWishlist
     @Test
-    void givenValidWishlistRequest_whenRemoveProductFromUserWishlistIsCalled_thenNoContentIsReturned() {
+    public void givenValidWishlistRequest_whenRemoveProductFromUserWishlistIsCalled_thenNoContentIsReturned() {
         String userId = "user1";
         String productId = "product1";
         WishlistRequest request = new WishlistRequest(productId);
@@ -127,7 +127,7 @@ public class WishlistControllerTests {
     }
 
     @Test
-    void givenProductNotFoundInWishlist_whenRemoveProductFromUserWishlistIsCalled_thenIllegalArgumentExceptionIsThrown() {
+    public void givenProductNotFoundInWishlist_whenRemoveProductFromUserWishlistIsCalled_thenIllegalArgumentExceptionIsThrown() {
         String userId = "user1";
         String productId = "product1";
         WishlistRequest request = new WishlistRequest(productId);
@@ -141,7 +141,7 @@ public class WishlistControllerTests {
 
     // Tests for isProductInUserWishlist
     @Test
-    void givenProductInWishlist_whenIsProductInUserWishlistIsCalled_thenWishlistExistsResponseIsReturned() {
+    public void givenProductInWishlist_whenIsProductInUserWishlistIsCalled_thenWishlistExistsResponseIsReturned() {
         String userId = "user1";
         String productId = "product1";
         WishlistRequest request = new WishlistRequest(productId);
@@ -156,7 +156,7 @@ public class WishlistControllerTests {
     }
 
     @Test
-    void givenProductNotInWishlist_whenIsProductInUserWishlistIsCalled_thenWishlistDoesNotExistResponseIsReturned() {
+    public void givenProductNotInWishlist_whenIsProductInUserWishlistIsCalled_thenWishlistDoesNotExistResponseIsReturned() {
         String userId = "user1";
         String productId = "product1";
         WishlistRequest request = new WishlistRequest(productId);
